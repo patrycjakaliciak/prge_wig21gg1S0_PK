@@ -12,3 +12,5 @@ function TodoNewTodo({ listHandler, itemHandler }) {
     </div>
   );
 }
+
+export default TodoNewTodo;

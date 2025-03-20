@@ -13,11 +13,12 @@ function NewApp() {
 
   const listHandler = () => {
     setListaZadan([...listaZadan, newItem]);
+    setlistFiltered([...listaZadan, newItem]);
   };
 
   const itemHandler = (e) => {
     setNewItem(e.target.value);
-    setlistFiltered([...listaZadan, newItem]);
+    setNewItem("");
   };
 
   const listFilter = (e) => {
@@ -25,20 +26,16 @@ function NewApp() {
     setlistFiltered(listaZadan.filter((item) => item.includes(e.target.value)));
   };
 
-
   const listItemRemover = (id) => {
-    console.log(id)
-    setlistaZadan(listaZadan.filter((filter(item, index => index !== id))
-    setlistFiltered
-  }
+    console.log(id);
+    setListaZadan(listaZadan.filter((item, index) => index !== id));
+    setlistFiltered(listaZadan.filter((item, index) => index !== id));
+  };
 
   return (
     <div>
       {/* 1. Opracowanie listy zadań do zrobienia przez użytkownika */}
-      <TodoList 
-      listaZadan={listFiltered}
-      listItemRemover={listItemRemover}
-       />
+      <TodoList listaZadan={listFiltered} listItemRemover={listItemRemover} />
 
       {/* 2. dodawanie nowego zadania do listy zadań użytkownika */}
       <TodoNewTodo listHandler={listHandler} itemHandler={itemHandler} />
@@ -53,3 +50,5 @@ function NewApp() {
     </div>
   );
 }
+
+export default NewApp;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function TodoItem({ id, zadanie, listItemRemover }) {
+function Todoitem({ id, zadanie, listItemRemover }) {
   console.log(id, zadanie);
   return (
     <div key={id}>
@@ -9,4 +9,5 @@ function TodoItem({ id, zadanie, listItemRemover }) {
     </div>
   );
 }
-export default TodoItem;
+
+export default Todoitem;
